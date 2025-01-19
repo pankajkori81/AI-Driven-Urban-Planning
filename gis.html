@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="static/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load the `mapbox-gl-geocoder` plugin. -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>AI Driven Urban Planning </title>
+
+</head>
+<body>
+    <div class="relative w-screen h-screen" id="map"></div>
+
+    <div class="absolute top-2 left-2 z-10 flex flex-col items-start gap-2">
+        <div class="flex items-center">
+            <div class="z-20" id="geocoder"></div>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded-xl shadow-xl flex justify-center items-center gap-2" id="coord">
+                <span class="material-icons material-symbols-outlined">
+                    local_shipping
+                </span>
+                Move model to pin
+            </button>
+        </div>
+        <button class="px-4 py-2 bg-blue-500 text-white rounded-xl shadow-xl flex justify-center items-center gap-2" id="random">
+            <span class="material-icons material-symbols-outlined">
+                casino
+            </span>
+            Move randomly
+        </button>
+        <button class="px-4 py-2 bg-blue-500 text-white rounded-xl shadow-xl flex justify-center items-center gap-2" id="fly">
+            <span class="material-icons material-icons-outlined">
+                rocket_launch
+            </span>
+            <div id="flyText">Fly to model</div>
+        </button>
+        <button class="px-4 py-2 bg-white text-blue-500 rounded-xl shadow-xl flex justify-center items-center gap-2" id="markerVis">
+            <span class="material-icons material-icons-outlined">
+                location_on
+            </span>
+            <div id="markerVisText">Hide model marker</div>
+        </button>
+        <a class="px-4 py-2 bg-blue-500 text-white rounded-xl shadow-xl flex justify-center items-center gap-2" href='index.html'>
+            <span class="material-icons material-symbols-outlined">
+                apartment
+            </span>
+            Model viewer
+        </a>
+    </div>
+ 
+
+    <footer class="fixed w-screen bottom-0 flex items-center justify-center z-10 pointer-events-none">
+    
+    </footer>
+
+    <script src="bundle/gis.js"></script>
+</body>
+</html>
